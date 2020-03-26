@@ -21,8 +21,8 @@ ENV GEOIPUPDATE_VER     "4.0.6"
 ENV YOUR_LICENSE_KEY    $blabla
 
 # download gzip database files to /tmp/
-ADD https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=${YOUR_LICENSE_KEY}&suffix=tar.gz /tmp/
-ADD https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${YOUR_LICENSE_KEY}&suffix=tar.gz /tmp/
+ADD https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=${YOUR_LICENSE_KEY}&suffix=tar.gz /tmp/${GEOIP_CNTR_DB}.gz
+ADD https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${YOUR_LICENSE_KEY}&suffix=tar.gz /tmp/${GEOIP_CITY_DB}.gz
 
 # unzip databases into database directory
 RUN mkdir -p ${GEOIP_DB_DIR} \
