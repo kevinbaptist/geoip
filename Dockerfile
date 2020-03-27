@@ -9,7 +9,7 @@
 FROM alpine
 
 MAINTAINER Tom Callahan <tcallahan@controlscan.com>
-ARG blabla
+ARG license
 
 ### DOWNLOAD DATABASES
 
@@ -18,7 +18,7 @@ ENV GEOIP_CNTR_DB       GeoLite2-Country_20200324.tar
 ENV GEOIP_CITY_DB       GeoLite2-City_20200324.tar
 ENV GEOIP_DB_DIR        /usr/share/GeoIP
 ENV GEOIPUPDATE_VER     "4.0.6"
-ENV YOUR_LICENSE_KEY    $blabla
+ENV YOUR_LICENSE_KEY    $license
 
 # download gzip database files to /tmp/
 ADD https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-Country&license_key=${YOUR_LICENSE_KEY}&suffix=tar.gz /tmp/${GEOIP_CNTR_DB}.gz
